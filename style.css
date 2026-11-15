@@ -659,14 +659,17 @@ body {
     opacity: 0.8;
 }
 
+
 /* ===== ACTIVE NAVIGATION LINK ===== */
 
-.main-nav a.active {
+.main-nav a.active,
+.nav-dropdown-heading a.active {
     color: #0284c7;
     position: relative;
 }
 
-.main-nav a.active::after {
+.main-nav a.active::after,
+.nav-dropdown-heading a.active::after {
     content: "";
     position: absolute;
     left: 0;
@@ -676,6 +679,7 @@ body {
     background: #0284c7;
     border-radius: 2px;
 }
+
 
 /* ===== MOBILE MENU BUTTON ===== */
 
