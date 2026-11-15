@@ -700,6 +700,29 @@ body {
     transition: width 0.3s ease;
 }
 
+/* ===== NAVIGATION HOVER UNDERLINE ===== */
+
+@media (min-width: 769px) {
+
+    .main-nav > a:not(.active)::after,
+    .nav-dropdown-heading > a:not(.active)::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 0;
+        height: 2px;
+        background: #0284c7;
+        border-radius: 2px;
+        transition: width 0.3s ease;
+    }
+
+    .main-nav > a:not(.active):hover::after,
+    .nav-dropdown-heading > a:not(.active):hover::after {
+        width: 100%;
+    }
+
+}
 /* ===== MOBILE MENU BUTTON ===== */
 
 .menu-toggle {
