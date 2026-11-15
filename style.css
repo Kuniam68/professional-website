@@ -743,3 +743,93 @@ body {
         display: none;
     }
 }
+
+
+/* ===== PROFESSIONAL SERVICES DROPDOWN ===== */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-heading {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-toggle {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 210px;
+    padding: 8px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1100;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 12px;
+    color: #1e293b;
+    text-decoration: none;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background: #f1f5f9;
+    color: #0284c7;
+}
+
+/* Desktop dropdown interaction */
+
+@media (min-width: 769px) {
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu,
+    .nav-dropdown.open .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Mobile dropdown interaction */
+
+@media (max-width: 768px) {
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .nav-dropdown-heading {
+        justify-content: center;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        min-width: 0;
+        box-shadow: none;
+        background: #f8fafc;
+        margin-top: 5px;
+    }
+
+    .nav-dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        white-space: normal;
+        text-align: center;
+    }
+}
