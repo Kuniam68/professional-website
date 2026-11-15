@@ -693,6 +693,12 @@ body {
     border-radius: 2px;
 }
 
+/* ===== ACTIVE UNDERLINE ANIMATION ===== */
+
+.main-nav a::after,
+.nav-dropdown-heading a::after {
+    transition: width 0.3s ease;
+}
 
 /* ===== MOBILE MENU BUTTON ===== */
 
