@@ -1,0 +1,145 @@
+
+/* ===== GLOBAL SETTINGS ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #075985;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #334155;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #0284c7;
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #075985,
+        #0e7490,
+        #0284c7
+    );
+
+    color: #ffffff;
+}
+
+.hero p:first-child {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    max-width: 850px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero p:nth-of-type(2) {
+    max-width: 600px;
+    font-size: 18px;
+    color: #e0f2fe;
+    margin-bottom: 30px;
+}
+
+/* ===== HERO BUTTON ===== */
+
+.hero-button {
+    display: inline-block;
+    background: #ffffff;
+    color: #075985;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.hero-button:hover {
+    background: #e0f2fe;
+    transform: translateY(-3px);
+}
+
+/* ===== FOOTER ===== */
+
+.site-footer {
+    text-align: center;
+    padding: 25px 15px;
+    background: #0f172a;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px;
+    }
+
+    .main-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 20px;
+    }
+
+    .hero {
+        min-height: 65vh;
+    }
+}
