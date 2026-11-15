@@ -18,6 +18,11 @@ body {
     line-height: 1.6;
 }
 
+/* ===== STICKY FOOTER LAYOUT ===== */
+
+main {
+    flex: 1;
+}
 /* ===== HEADER ===== */
 
 .site-header {
