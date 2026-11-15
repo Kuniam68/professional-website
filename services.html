@@ -30,7 +30,41 @@
     <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
         <a href="index.html?v=4">Home</a>
         <a href="about.html?v=4">About</a>
-        <a href="services.html?v=4" class="active" aria-current="page">Services</a>
+        
+<div class="nav-dropdown">
+
+    <div class="nav-dropdown-heading">
+        <a href="services.html?v=5"
+           class="active"
+           aria-current="page">
+            Services
+        </a>
+
+        <button class="dropdown-toggle"
+            type="button"
+            aria-label="Open Services submenu"
+            aria-expanded="false"
+            aria-controls="services-dropdown">
+            ▾
+        </button>
+    </div>
+
+    <div class="dropdown-menu" id="services-dropdown">
+        <a href="services.html?v=5#web-development">
+            Web Development
+        </a>
+
+        <a href="services.html?v=5#creative-design">
+            Creative Design
+        </a>
+
+        <a href="services.html?v=5#digital-solutions">
+            Digital Solutions
+        </a>
+    </div>
+
+</div>
+
         <a href="projects.html?v=4">Projects</a>
         <a href="blog.html?v=4">Blog</a>
         <a href="contact.html?v=4">Contact</a>
