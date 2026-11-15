@@ -996,3 +996,34 @@ body {
         outline-offset: 2px;
     }
 }
+
+
+/* ===== RESPONSIVE FOOTER ===== */
+
+@media (max-width: 768px) {
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+        padding: 50px 25px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 45px 25px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+}
