@@ -859,3 +859,43 @@ body {
         text-align: center;
     }
 }
+
+
+/* ===== DESKTOP DROPDOWN POLISH ===== */
+
+@media (min-width: 769px) {
+
+    .nav-dropdown {
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-menu {
+        top: calc(100% + 12px);
+        min-width: 230px;
+        padding: 8px;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .dropdown-menu a {
+        padding: 11px 14px;
+        font-size: 14px;
+        transition:
+            background 0.25s ease,
+            color 0.25s ease,
+            padding-left 0.25s ease;
+    }
+
+    .dropdown-menu a:hover {
+        background: #eff6ff;
+        color: #0284c7;
+        padding-left: 19px;
+    }
+
+    .dropdown-menu a:focus-visible {
+        outline: 2px solid #0284c7;
+        outline-offset: 2px;
+    }
+}
