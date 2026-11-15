@@ -630,3 +630,21 @@ body {
     }
 
 }
+
+/* ===== CONTACT FORM FEEDBACK ===== */
+
+#form-status {
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* DISABLED SUBMIT BUTTON */
+
+.contact-submit:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.8;
+}
