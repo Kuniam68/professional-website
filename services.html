@@ -146,7 +146,10 @@
     </footer>
 
 
+
 <script>
+// ===== MOBILE NAVIGATION =====
+
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 
@@ -161,6 +164,24 @@ menuToggle.addEventListener("click", function() {
     );
 
     mainNav.classList.toggle("active");
+});
+
+// ===== SERVICES DROPDOWN =====
+
+const dropdownToggle = document.querySelector(".dropdown-toggle");
+const navDropdown = document.querySelector(".nav-dropdown");
+
+dropdownToggle.addEventListener("click", function() {
+    const isExpanded = dropdownToggle.getAttribute("aria-expanded") === "true";
+
+    dropdownToggle.setAttribute("aria-expanded", !isExpanded);
+
+    dropdownToggle.setAttribute(
+        "aria-label",
+        isExpanded ? "Open Services submenu" : "Close Services submenu"
+    );
+
+    navDropdown.classList.toggle("open");
 });
 </script>
 
