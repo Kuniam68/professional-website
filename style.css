@@ -13,10 +13,6 @@ html {
 
 /* ===== GLOBAL PAGE LAYOUT ===== */
 
-html {
-    min-height: 100%;
-}
-
 body {
     font-family: Arial, sans-serif;
     background: #f8fafc;
@@ -26,8 +22,12 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
 
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 /* ===== HEADER ===== */
 
@@ -144,7 +144,6 @@ body {
     background: #0f172a;
     color: #cbd5e1;
     font-size: 14px;
-    margin-top: auto;
 }
 
 .footer-container {
