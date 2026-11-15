@@ -11,6 +11,12 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ===== GLOBAL PAGE LAYOUT ===== */
+
+html {
+    min-height: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #f8fafc;
@@ -20,14 +26,8 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
 
-    display: flex;
-    flex-direction: column;
-}
-
-/* ===== STICKY FOOTER LAYOUT ===== */
-
-main {
-    flex: 1;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 /* ===== HEADER ===== */
 
