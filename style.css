@@ -696,3 +696,50 @@ body {
         display: block;
     }
 }
+
+
+/* ===== FLOATING MOBILE NAVIGATION ===== */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 7%;
+        width: min(260px, 86vw);
+        background: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        z-index: 1000;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav a {
+        padding: 10px 12px;
+    }
+
+    .main-nav a.active::after {
+        display: none;
+    }
+}
