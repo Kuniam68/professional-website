@@ -16,8 +16,9 @@
 <body>
 
  
+
 <header class="site-header">
-    <a href="index.html?v=4" class="logo">MyWebsite</a>
+    <a href="index.html?v=5" class="logo">MyWebsite</a>
 
     <button class="menu-toggle"
         type="button"
@@ -28,14 +29,37 @@
     </button>
 
     <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
-        <a href="index.html?v=4">Home</a>
-        <a href="about.html?v=4">About</a>
-        <a href="services.html?v=4">Services</a>
-        <a href="projects.html?v=4">Projects</a>
-        <a href="blog.html?v=4">Blog</a>
-        <a href="contact.html?v=4" class="active" aria-current="page">Contact</a>
+
+        <a href="index.html?v=5">Home</a>
+        <a href="about.html?v=5">About</a>
+
+        <div class="nav-dropdown">
+            <div class="nav-dropdown-heading">
+                <a href="services.html?v=5">Services</a>
+
+                <button class="dropdown-toggle"
+                    type="button"
+                    aria-label="Open Services submenu"
+                    aria-expanded="false"
+                    aria-controls="services-dropdown">
+                    ▾
+                </button>
+            </div>
+
+            <div class="dropdown-menu" id="services-dropdown">
+                <a href="services.html?v=5#web-development">Web Development</a>
+                <a href="services.html?v=5#creative-design">Creative Design</a>
+                <a href="services.html?v=5#digital-solutions">Digital Solutions</a>
+            </div>
+        </div>
+
+        <a href="projects.html?v=5">Projects</a>
+        <a href="blog.html?v=5">Blog</a>
+        <a href="contact.html?v=5" class="active" aria-current="page">Contact</a>
+
     </nav>
 </header>
+
 
 
     <main>
@@ -250,6 +274,24 @@ menuToggle.addEventListener("click", function() {
     );
 
     mainNav.classList.toggle("active");
+});
+
+// ===== SERVICES DROPDOWN =====
+
+const dropdownToggle = document.querySelector(".dropdown-toggle");
+const navDropdown = document.querySelector(".nav-dropdown");
+
+dropdownToggle.addEventListener("click", function() {
+    const isExpanded = dropdownToggle.getAttribute("aria-expanded") === "true";
+
+    dropdownToggle.setAttribute("aria-expanded", !isExpanded);
+
+    dropdownToggle.setAttribute(
+        "aria-label",
+        isExpanded ? "Open Services submenu" : "Close Services submenu"
+    );
+
+    navDropdown.classList.toggle("open");
 });
 </script>
 
