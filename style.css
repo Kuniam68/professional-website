@@ -688,3 +688,11 @@ body {
     cursor: pointer;
     padding: 5px 10px;
 }
+
+/* ===== MOBILE MENU VISIBILITY FIX ===== */
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
