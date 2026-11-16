@@ -1114,3 +1114,35 @@ main {
     }
 
 }
+
+/* ===== MEDICAL DISCLAIMER ===== */
+
+.medical-disclaimer {
+    max-width: 1200px;
+    margin: 35px auto 0;
+    padding: 25px 30px;
+    background: #eff6ff;
+    border-left: 4px solid #0284c7;
+    border-radius: 8px;
+}
+
+.medical-disclaimer h3 {
+    color: #0f172a;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.medical-disclaimer p {
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+
+    .medical-disclaimer {
+        margin-top: 25px;
+        padding: 22px;
+    }
+
+}
