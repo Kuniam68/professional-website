@@ -98,17 +98,47 @@
     </button>
 </div>
 
-        <div class="medical-tools-toolbar">
+       
+<div class="medical-search-box">
 
-    <div class="medical-search-box">
+    <div class="medical-search-input-wrapper">
+
+        <span class="search-icon" aria-hidden="true">⌕</span>
 
         <input
             type="search"
             id="medicalToolSearch"
-            placeholder="Search medical calculators..."
-            aria-label="Search medical calculators">
+            placeholder="Search calculators..."
+            aria-label="Search medical calculators"
+            autocomplete="off"
+            aria-autocomplete="list"
+            aria-controls="searchSuggestions"
+            aria-expanded="false">
+
+        <button
+            type="button"
+            id="clearMedicalSearch"
+            class="clear-search"
+            aria-label="Clear search"
+            hidden>
+            ×
+        </button>
 
     </div>
+
+    <p class="search-guide">
+        Search by calculator name
+    </p>
+
+    <div
+        id="searchSuggestions"
+        class="search-suggestions"
+        role="listbox"
+        aria-label="Calculator suggestions"
+        hidden>
+    </div>
+
+</div>
 
     <div class="medical-category-filter">
 
