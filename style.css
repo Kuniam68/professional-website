@@ -1288,3 +1288,42 @@ main {
     accent-color: #0284c7;
     cursor: pointer;
 }
+
+
+/* ===== MEDICAL TOOLS THEME TOGGLE ===== */
+
+.theme-toggle-container {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.theme-toggle {
+    padding: 10px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #1e293b;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    border-color: #0284c7;
+    color: #0284c7;
+}
+
+.theme-toggle:focus-visible {
+    outline: 3px solid #7dd3fc;
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .theme-toggle-container {
+        margin-bottom: 15px;
+    }
+}
