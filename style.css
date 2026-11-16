@@ -1327,3 +1327,72 @@ main {
         margin-bottom: 15px;
     }
 }
+
+
+/* ===== MEDICAL TOOLS DARK THEME ===== */
+
+body.medical-tools-dark .medical-tools-section {
+    background: #0f172a;
+}
+
+body.medical-tools-dark .medical-tool-card {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+body.medical-tools-dark .medical-tool-card h2 {
+    color: #f8fafc;
+}
+
+body.medical-tools-dark .medical-tool-card p {
+    color: #cbd5e1;
+}
+
+body.medical-tools-dark .medical-search-box input,
+body.medical-tools-dark .medical-category-filter select {
+    background: #1e293b;
+    color: #f8fafc;
+    border-color: #475569;
+}
+
+body.medical-tools-dark .medical-category-filter label,
+body.medical-tools-dark .favorites-filter label {
+    color: #e2e8f0;
+}
+
+body.medical-tools-dark .medical-disclaimer {
+    background: #172554;
+    border-left-color: #38bdf8;
+}
+
+body.medical-tools-dark .medical-disclaimer h3 {
+    color: #f8fafc;
+}
+
+body.medical-tools-dark .medical-disclaimer p {
+    color: #cbd5e1;
+}
+
+body.medical-tools-dark .theme-toggle {
+    background: #1e293b;
+    color: #f8fafc;
+    border-color: #475569;
+}
+
+body.medical-tools-dark .favorite-toggle {
+    background: #1e293b;
+    color: #cbd5e1;
+    border-color: #475569;
+}
+
+body.medical-tools-dark .favorite-toggle[aria-pressed="true"] {
+    color: #fbbf24;
+    border-color: #f59e0b;
+    background: #422006;
+}
+
+body.medical-tools-dark .featured-label {
+    background: #0c4a6e;
+    color: #bae6fd;
+}
