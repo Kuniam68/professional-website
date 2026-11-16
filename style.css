@@ -1263,3 +1263,28 @@ main {
     outline: 3px solid #7dd3fc;
     outline-offset: 3px;
 }
+
+
+/* ===== FAVORITES FILTER ===== */
+
+.favorites-filter {
+    max-width: 1200px;
+    margin: 0 auto 22px;
+}
+
+.favorites-filter label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.favorites-filter input {
+    width: 17px;
+    height: 17px;
+    accent-color: #0284c7;
+    cursor: pointer;
+}
