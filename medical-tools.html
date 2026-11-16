@@ -286,6 +286,8 @@ const medicalCategory = document.getElementById("medicalCategory");
 
 const medicalCards = document.querySelectorAll(".medical-tool-card");
 
+const showFavoritesOnly = document.getElementById("showFavoritesOnly");
+
 function filterMedicalTools() {
 
     const searchText = medicalSearch.value.toLowerCase().trim();
@@ -303,8 +305,18 @@ function filterMedicalTools() {
             selectedCategory === "all" ||
             category === selectedCategory;
 
+        const isFavorite =
+    savedFavorites.includes(
+        card.querySelector("h2").textContent.trim()
+    );
+
+const matchesFavorites =
+    !showFavoritesOnly.checked || isFavorite;
+
         card.style.display =
-            matchesSearch && matchesCategory ? "" : "none";
+            matchesSearch && matchesCategory && matchesFavorites
+    ? ""
+    : "none";
 
     });
 
@@ -313,6 +325,8 @@ function filterMedicalTools() {
 medicalSearch.addEventListener("input", filterMedicalTools);
 
 medicalCategory.addEventListener("change", filterMedicalTools);
+
+showFavoritesOnly.addEventListener("change", filterMedicalTools);
 
 
 
