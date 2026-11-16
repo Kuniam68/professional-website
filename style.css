@@ -1640,3 +1640,9 @@ body.medical-tools-dark .featured-label {
     margin-top: 32px;
     z-index: 0;
 }
+
+/* ===== FAVORITES FILTER SPACING ===== */
+
+.medical-tools-section .favorites-filter {
+    margin-top: 16px;
+}
