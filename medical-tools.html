@@ -308,31 +308,73 @@ medicalSearch.addEventListener("input", filterMedicalTools);
 medicalCategory.addEventListener("change", filterMedicalTools);
 
 
+
 // ===== MEDICAL TOOLS FAVORITES =====
 
 const favoriteButtons = document.querySelectorAll(".favorite-toggle");
+const favoriteStorageKey = "medicalToolsFavorites";
+
+let savedFavorites = [];
+
+try {
+    const storedFavorites = JSON.parse(
+        localStorage.getItem(favoriteStorageKey)
+    );
+
+    if (Array.isArray(storedFavorites)) {
+        savedFavorites = storedFavorites;
+    }
+} catch (error) {
+    savedFavorites = [];
+}
 
 favoriteButtons.forEach(function(button) {
+    const card = button.closest(".medical-tool-card");
+    const calculatorName =
+        card.querySelector("h2").textContent.trim();
+
+    function updateFavoriteButton(isFavorite) {
+        button.setAttribute("aria-pressed", String(isFavorite));
+        button.textContent = isFavorite ? "★" : "☆";
+        button.setAttribute(
+            "aria-label",
+            (isFavorite ? "Remove " : "Add ") +
+            calculatorName +
+            " " +
+            (isFavorite ? "from" : "to") +
+            " favorites"
+        );
+    }
+
+    updateFavoriteButton(
+        savedFavorites.includes(calculatorName)
+    );
+
     button.addEventListener("click", function() {
         const isFavorite =
             button.getAttribute("aria-pressed") === "true";
 
-        button.setAttribute("aria-pressed", !isFavorite);
+        if (isFavorite) {
+            savedFavorites = savedFavorites.filter(function(name) {
+                return name !== calculatorName;
+            });
+        } else {
+            savedFavorites.push(calculatorName);
+        }
 
-        button.textContent = isFavorite ? "☆" : "★";
+        try {
+            localStorage.setItem(
+                favoriteStorageKey,
+                JSON.stringify(savedFavorites)
+            );
+        } catch (error) {
+            console.warn("Unable to save favorites.", error);
+        }
 
-        const card = button.closest(".medical-tool-card");
-        const calculatorName =
-            card.querySelector("h2").textContent.trim();
-
-        button.setAttribute(
-            "aria-label",
-            (isFavorite ? "Add " : "Remove ") +
-            calculatorName +
-            (isFavorite ? " from favorites" : " from favorites")
-        );
+        updateFavoriteButton(!isFavorite);
     });
 });
+
 
 </script>
 </body>
