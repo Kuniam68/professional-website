@@ -380,8 +380,37 @@ const matchesFavorites =
 }
 
 
+
 const searchSuggestions = document.getElementById("searchSuggestions");
 const clearMedicalSearch = document.getElementById("clearMedicalSearch");
+
+let activeSuggestionIndex = -1;
+
+function closeSearchSuggestions() {
+    searchSuggestions.hidden = true;
+    medicalSearch.setAttribute("aria-expanded", "false");
+    activeSuggestionIndex = -1;
+}
+
+function selectSuggestion(name) {
+    medicalSearch.value = name;
+    closeSearchSuggestions();
+    filterMedicalTools();
+}
+
+function updateActiveSuggestion(suggestions) {
+
+    suggestions.forEach(function(suggestion, index) {
+
+        const isActive = index === activeSuggestionIndex;
+
+        suggestion.setAttribute("aria-selected", String(isActive));
+
+        suggestion.classList.toggle("active", isActive);
+
+    });
+
+}
 
 function updateSearchSuggestions() {
 
@@ -389,11 +418,12 @@ function updateSearchSuggestions() {
 
     searchSuggestions.innerHTML = "";
 
+    activeSuggestionIndex = -1;
+
     clearMedicalSearch.hidden = query.length === 0;
 
     if (!query) {
-        searchSuggestions.hidden = true;
-        medicalSearch.setAttribute("aria-expanded", "false");
+        closeSearchSuggestions();
         filterMedicalTools();
         return;
     }
@@ -417,15 +447,10 @@ function updateSearchSuggestions() {
             suggestion.className = "search-suggestion-item";
             suggestion.textContent = name;
             suggestion.setAttribute("role", "option");
+            suggestion.setAttribute("aria-selected", "false");
 
             suggestion.addEventListener("click", function() {
-
-                medicalSearch.value = name;
-                searchSuggestions.hidden = true;
-                medicalSearch.setAttribute("aria-expanded", "false");
-
-                filterMedicalTools();
-
+                selectSuggestion(name);
             });
 
             searchSuggestions.appendChild(suggestion);
@@ -442,6 +467,65 @@ function updateSearchSuggestions() {
 
 medicalSearch.addEventListener("input", updateSearchSuggestions);
 
+medicalSearch.addEventListener("keydown", function(event) {
+
+    const suggestions = Array.from(
+        searchSuggestions.querySelectorAll(".search-suggestion-item")
+    );
+
+    if (searchSuggestions.hidden || suggestions.length === 0) {
+        if (event.key === "Escape") {
+            closeSearchSuggestions();
+        }
+        return;
+    }
+
+    if (event.key === "ArrowDown") {
+
+        event.preventDefault();
+
+        activeSuggestionIndex =
+            (activeSuggestionIndex + 1) % suggestions.length;
+
+        updateActiveSuggestion(suggestions);
+
+    }
+
+    else if (event.key === "ArrowUp") {
+
+        event.preventDefault();
+
+        activeSuggestionIndex =
+            activeSuggestionIndex <= 0
+                ? suggestions.length - 1
+                : activeSuggestionIndex - 1;
+
+        updateActiveSuggestion(suggestions);
+
+    }
+
+    else if (event.key === "Enter") {
+
+        if (activeSuggestionIndex >= 0) {
+
+            event.preventDefault();
+
+            selectSuggestion(
+                suggestions[activeSuggestionIndex].textContent
+            );
+
+        }
+
+    }
+
+    else if (event.key === "Escape") {
+
+        closeSearchSuggestions();
+
+    }
+
+});
+
 clearMedicalSearch.addEventListener("click", function() {
 
     medicalSearch.value = "";
@@ -449,7 +533,6 @@ clearMedicalSearch.addEventListener("click", function() {
     medicalSearch.focus();
 
 });
-
 
 medicalCategory.addEventListener("change", filterMedicalTools);
 
