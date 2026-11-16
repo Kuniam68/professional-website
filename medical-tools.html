@@ -307,6 +307,33 @@ medicalSearch.addEventListener("input", filterMedicalTools);
 
 medicalCategory.addEventListener("change", filterMedicalTools);
 
+
+// ===== MEDICAL TOOLS FAVORITES =====
+
+const favoriteButtons = document.querySelectorAll(".favorite-toggle");
+
+favoriteButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        const isFavorite =
+            button.getAttribute("aria-pressed") === "true";
+
+        button.setAttribute("aria-pressed", !isFavorite);
+
+        button.textContent = isFavorite ? "☆" : "★";
+
+        const card = button.closest(".medical-tool-card");
+        const calculatorName =
+            card.querySelector("h2").textContent.trim();
+
+        button.setAttribute(
+            "aria-label",
+            (isFavorite ? "Add " : "Remove ") +
+            calculatorName +
+            (isFavorite ? " from favorites" : " from favorites")
+        );
+    });
+});
+
 </script>
 </body>
 
