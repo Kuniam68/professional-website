@@ -1396,3 +1396,13 @@ body.medical-tools-dark .featured-label {
     background: #0c4a6e;
     color: #bae6fd;
 }
+
+/* ===== MEDICAL TOOL CARD IMAGES ===== */
+
+.medical-tool-image {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: 0 auto 18px;
+}
