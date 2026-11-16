@@ -1605,3 +1605,38 @@ body.medical-tools-dark .featured-label {
     background: #475569;
     color: #f1f5f9;
 }
+
+/* ===== PERMANENT SEARCH SUGGESTION LAYOUT FIX ===== */
+
+.medical-tools-section .medical-search-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.medical-tools-section .medical-search-input-wrapper {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.medical-tools-section .search-suggestions {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: 8px;
+    z-index: 1;
+}
+
+.medical-tools-section .medical-category-filter {
+    position: relative;
+    clear: both;
+    width: 100%;
+    margin-top: 20px;
+    z-index: 0;
+}
