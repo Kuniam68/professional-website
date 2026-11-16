@@ -1207,3 +1207,24 @@ main {
     font-weight: 700;
     letter-spacing: 0.7px;
 }
+
+
+/* ===== MEDICAL CALCULATOR CARD IMPROVEMENTS ===== */
+
+.medical-tool-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.medical-tool-card p {
+    flex-grow: 1;
+}
+
+.medical-tool-card a {
+    align-self: flex-start;
+}
+
+.medical-tool-card a:focus-visible {
+    outline: 3px solid #7dd3fc;
+    outline-offset: 3px;
+}
