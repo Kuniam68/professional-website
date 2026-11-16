@@ -1673,3 +1673,14 @@ body.medical-tools-dark .featured-label {
     outline: 3px solid #38bdf8;
     outline-offset: 3px;
 }
+
+/* ===== NAVIGATION KEYBOARD ACCESSIBILITY ===== */
+
+.logo:focus-visible,
+.main-nav a:focus-visible,
+.menu-toggle:focus-visible,
+.dropdown-toggle:focus-visible {
+    outline: 3px solid #0284c7;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
