@@ -410,6 +410,52 @@ favoriteButtons.forEach(function(button) {
 });
 
 
+// ===== MEDICAL TOOLS DARK MODE =====
+
+const themeToggle = document.getElementById("themeToggle");
+const themeStorageKey = "medicalToolsTheme";
+
+let savedTheme = "light";
+
+try {
+    savedTheme = localStorage.getItem(themeStorageKey) || "light";
+} catch (error) {
+    savedTheme = "light";
+}
+
+function applyTheme(theme) {
+    const isDark = theme === "dark";
+
+    document.body.classList.toggle("medical-tools-dark", isDark);
+
+    themeToggle.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+
+    themeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Switch to light mode" : "Switch to dark mode"
+    );
+
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+}
+
+applyTheme(savedTheme);
+
+themeToggle.addEventListener("click", function() {
+    const isDark =
+        document.body.classList.contains("medical-tools-dark");
+
+    const newTheme = isDark ? "light" : "dark";
+
+    applyTheme(newTheme);
+
+    try {
+        localStorage.setItem(themeStorageKey, newTheme);
+    } catch (error) {
+        console.warn("Unable to save theme preference.", error);
+    }
+});
+
+
 </script>
 </body>
 
