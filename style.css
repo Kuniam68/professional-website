@@ -1146,3 +1146,49 @@ main {
     }
 
 }
+
+/* ===== MEDICAL TOOLS SEARCH AND FILTER ===== */
+
+.medical-tools-toolbar {
+    max-width: 1200px;
+    margin: 0 auto 35px;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+    gap: 20px;
+    align-items: end;
+}
+
+.medical-search-box input,
+.medical-category-filter select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #1e293b;
+    font: inherit;
+    outline: none;
+}
+
+.medical-search-box input:focus,
+.medical-category-filter select:focus {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.14);
+}
+
+.medical-category-filter label {
+    display: block;
+    margin-bottom: 7px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .medical-tools-toolbar {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+}
