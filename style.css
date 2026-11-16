@@ -1406,3 +1406,52 @@ body.medical-tools-dark .featured-label {
     object-fit: contain;
     margin: 0 auto 18px;
 }
+
+/* ===== MEDICAL TOOL CARD LAYOUT IMPROVEMENTS ===== */
+
+.medical-tool-card {
+    position: relative;
+}
+
+/* Favorite button: fixed at the top-right of each card */
+.medical-tool-card .favorite-toggle {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: auto;
+    min-width: 42px;
+    height: 42px;
+    padding: 4px 10px;
+    margin: 0;
+    font-size: 27px;
+    line-height: 1;
+    z-index: 2;
+}
+
+/* Featured header */
+.medical-tool-card .featured-label {
+    display: block;
+    margin: -25px -25px 16px;
+    padding: 12px 55px 12px 18px;
+    background: #075985;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-align: left;
+    border-radius: 16px 16px 0 0;
+}
+
+/* Larger calculator illustrations */
+.medical-tool-card .medical-tool-image {
+    display: block;
+    width: 145px;
+    height: 145px;
+    object-fit: contain;
+    margin: 0 auto 5px;
+}
+
+/* Keep calculator names close to images */
+.medical-tool-card h2 {
+    margin-top: 0;
+}
