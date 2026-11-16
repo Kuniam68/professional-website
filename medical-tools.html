@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Explore our clinical calculators and medical tools.">
-    <meta property="og:type" content="website">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore clinical medical calculators, including the GRACE Score Calculator for acute coronary syndrome and the Anion Gap Calculator for metabolic acidosis assessment.">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Medical Tools | MyWebsite">
 <meta property="og:description" content="Explore clinical calculators and medical tools, including the GRACE Score and Anion Gap calculators.">
 <meta property="og:url" content="https://kuniam68.github.io/professional-website/medical-tools.html">
@@ -617,7 +616,9 @@ favoriteButtons.forEach(function(button) {
             console.warn("Unable to save favorites.", error);
         }
 
-        updateFavoriteButton(!isFavorite);
+                updateFavoriteButton(!isFavorite);
+
+        filterMedicalTools();
     });
 });
 
