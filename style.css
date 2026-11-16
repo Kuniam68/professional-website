@@ -1542,3 +1542,68 @@ body.medical-tools-dark .featured-label {
 .clear-search[hidden] {
     display: none;
 }
+
+
+/* ===== SEARCH AUTOCOMPLETE SUGGESTIONS ===== */
+
+.search-suggestion-item {
+    display: block;
+    width: 100%;
+    padding: 13px 16px;
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid #f1f5f9;
+    border-radius: 0;
+    background: #ffffff;
+    color: #1e293b;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.search-suggestion-item:hover,
+.search-suggestion-item:focus {
+    background: #eff6ff;
+    color: #0369a1;
+    outline: none;
+}
+
+.no-search-results {
+    padding: 14px 16px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* Dark mode */
+.medical-tools-dark .medical-search-input-wrapper,
+.medical-tools-dark .search-suggestions {
+    background: #1e293b;
+    border-color: #475569;
+}
+
+.medical-tools-dark .medical-search-input-wrapper input {
+    color: #f1f5f9;
+}
+
+.medical-tools-dark .search-guide,
+.medical-tools-dark .no-search-results {
+    color: #cbd5e1;
+}
+
+.medical-tools-dark .search-suggestion-item {
+    background: #1e293b;
+    color: #f1f5f9;
+    border-bottom-color: #334155;
+}
+
+.medical-tools-dark .search-suggestion-item:hover,
+.medical-tools-dark .search-suggestion-item:focus {
+    background: #334155;
+    color: #7dd3fc;
+}
+
+.medical-tools-dark .clear-search {
+    background: #475569;
+    color: #f1f5f9;
+}
