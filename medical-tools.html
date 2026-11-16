@@ -378,7 +378,77 @@ const matchesFavorites =
 
 }
 
-medicalSearch.addEventListener("input", filterMedicalTools);
+
+const searchSuggestions = document.getElementById("searchSuggestions");
+const clearMedicalSearch = document.getElementById("clearMedicalSearch");
+
+function updateSearchSuggestions() {
+
+    const query = medicalSearch.value.trim().toLowerCase();
+
+    searchSuggestions.innerHTML = "";
+
+    clearMedicalSearch.hidden = query.length === 0;
+
+    if (!query) {
+        searchSuggestions.hidden = true;
+        medicalSearch.setAttribute("aria-expanded", "false");
+        filterMedicalTools();
+        return;
+    }
+
+    const matchingNames = Array.from(medicalCards)
+        .map(card => card.querySelector("h2").textContent.trim())
+        .filter(name => name.toLowerCase().includes(query));
+
+    if (matchingNames.length === 0) {
+
+        searchSuggestions.innerHTML =
+            '<div class="no-search-results">No matching calculator found.</div>';
+
+    } else {
+
+        matchingNames.forEach(function(name) {
+
+            const suggestion = document.createElement("button");
+
+            suggestion.type = "button";
+            suggestion.className = "search-suggestion-item";
+            suggestion.textContent = name;
+            suggestion.setAttribute("role", "option");
+
+            suggestion.addEventListener("click", function() {
+
+                medicalSearch.value = name;
+                searchSuggestions.hidden = true;
+                medicalSearch.setAttribute("aria-expanded", "false");
+
+                filterMedicalTools();
+
+            });
+
+            searchSuggestions.appendChild(suggestion);
+
+        });
+
+    }
+
+    searchSuggestions.hidden = false;
+    medicalSearch.setAttribute("aria-expanded", "true");
+
+    filterMedicalTools();
+}
+
+medicalSearch.addEventListener("input", updateSearchSuggestions);
+
+clearMedicalSearch.addEventListener("click", function() {
+
+    medicalSearch.value = "";
+    updateSearchSuggestions();
+    medicalSearch.focus();
+
+});
+
 
 medicalCategory.addEventListener("change", filterMedicalTools);
 
